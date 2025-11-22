@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumanResourceManagementSystem2_0"
         mc:Ignorable="d"
-        Title="Hệ Thống Quản Lý Nhân Sự" Height="600" Width="1000"
+        Title="Hệ Thống Quản Lý Nhân Sự" Height="650" Width="1100"
+        
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResizeWithGrip"
+        MouseDown="Window_MouseDown">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="MenuButtonStyle">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -23,9 +28,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              VerticalAlignment="Center" 
-                                              Margin="{TemplateBinding Padding}"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -39,54 +42,67 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Border Background="#ECF0F1" CornerRadius="20">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Opacity="0.2"/>
+        </Border.Effect>
 
-        <Border Grid.Column="0" Background="#2C3E50">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Row="0" Margin="0,30,0,30">
-                    <TextBlock Text="HRMS PRO" Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Management System" Foreground="#BDC3C7" FontSize="12" HorizontalAlignment="Center"/>
-                </StackPanel>
+            <Border Grid.Column="0" Background="#2C3E50" CornerRadius="20,0,0,20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="1">
+                    <StackPanel Grid.Row="0" Margin="0,40,0,30">
+                        <TextBlock Text="HRMS PRO" Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Management System" Foreground="#BDC3C7" FontSize="12" HorizontalAlignment="Center"/>
+                    </StackPanel>
 
-                    <Button x:Name="btnHome" Content="🏠  Trang Chủ" Style="{StaticResource MenuButtonStyle}" Click="btnHome_Click"/>
+                    <StackPanel Grid.Row="1">
+                        <Button x:Name="btnHome" Content="🏠  Trang Chủ" Style="{StaticResource MenuButtonStyle}" Click="btnHome_Click"/>
+                        <Button x:Name="btnManageEmp" Content="👥  Quản Lý Nhân Viên" Style="{StaticResource MenuButtonStyle}" Click="btnManageEmp_Click"/>
+                        <Button x:Name="btnDepartments" Content="🏢  Phòng Ban &amp; Vị Trí" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnPayrollAdmin" Content="💰  Tính Lương (Admin)" Style="{StaticResource MenuButtonStyle}"/>
 
-                    <Button x:Name="btnManageEmp" Content="👥  Quản Lý Nhân Viên" Style="{StaticResource MenuButtonStyle}" Click="btnManageEmp_Click"/>
-                    <Button x:Name="btnDepartments" Content="🏢  Phòng Ban - Vị Trí" Style="{StaticResource MenuButtonStyle}"/>
-                    <Button x:Name="btnPayrollAdmin" Content="💰  Tính Lương (Admin)" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnProfile" Content="👤  Hồ Sơ Của Tôi" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnTimeSheet" Content="📅  Chấm Công" Style="{StaticResource MenuButtonStyle}"/>
+                    </StackPanel>
 
-                    <Button x:Name="btnProfile" Content="👤  Hồ Sơ Của Tôi" Style="{StaticResource MenuButtonStyle}"/>
-                    <Button x:Name="btnTimeSheet" Content="📅  Chấm Công" Style="{StaticResource MenuButtonStyle}"/>
-                    <Button x:Name="btnLeaveRequest" Content="📝  Xin Nghỉ Phép" Style="{StaticResource MenuButtonStyle}"/>
-                </StackPanel>
+                    <Button x:Name="btnLogout" Grid.Row="2" Content="🚪  Đăng Xuất" 
+                            Background="#E74C3C" Foreground="White" Height="50" FontSize="16" BorderThickness="0"
+                            Click="btnLogout_Click" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="0,0,0,20">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
 
-                <Button x:Name="btnLogout" Grid.Row="2" Content="🚪  Đăng Xuất" 
-                        Background="#E74C3C" Foreground="White" Height="50" FontSize="16" BorderThickness="0"
-                        Click="btnLogout_Click" Cursor="Hand" Margin="0,0,0,0"/>
+            <Grid Grid.Column="1">
+
+                <Grid VerticalAlignment="Top" Height="50">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,15,0">
+                        <Button Content="—" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="14" Click="btnMinimize_Click"/>
+                        <Button Content="✕" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="16" FontWeight="Bold" Foreground="#E74C3C" Click="btnClose_Click"/>
+                    </StackPanel>
+
+                    <TextBlock x:Name="txtPageTitle" Text="Trang Chủ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0" FontSize="22" FontWeight="SemiBold" Foreground="#2C3E50"/>
+                </Grid>
+
+                <ContentControl x:Name="MainContent" Margin="20,60,20,20"/>
             </Grid>
-        </Border>
-
-        <Grid Grid.Column="1" Background="#ECF0F1">
-
-            <Grid VerticalAlignment="Top" Height="60" Background="White">
-                <TextBlock x:Name="txtWelcome" Text="Xin chào, User!" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16" Foreground="#7F8C8D"/>
-                <TextBlock x:Name="txtPageTitle" Text="Trang Chủ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="SemiBold" Foreground="#2C3E50"/>
-                <Border BorderBrush="#BDC3C7" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
-            </Grid>
-
-            <ContentControl x:Name="MainContent" Margin="20,80,20,20"/>
-
         </Grid>
-    </Grid>
+    </Border>
 </Window>

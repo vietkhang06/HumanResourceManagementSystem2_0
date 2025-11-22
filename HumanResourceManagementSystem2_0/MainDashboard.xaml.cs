@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace HumanResourceManagementSystem2_0
 {
@@ -71,6 +72,24 @@ namespace HumanResourceManagementSystem2_0
             // Mở trang quản lý
             // MainContent.Content = new EmployeeManagementView();
             txtPageTitle.Text = "Quản Lý Nhân Viên";
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        // 2. Nút Tắt (X)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown(); // Tắt hẳn ứng dụng
+        }
+
+        // 3. Nút Ẩn (Minimize)
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
