@@ -42,7 +42,7 @@
         </Style>
     </Window.Resources>
 
-    <Border Background="#ECF0F1" CornerRadius="20">
+    <Border Background="#F9F8F6" CornerRadius="20">
         <Border.Effect>
             <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Opacity="0.2"/>
         </Border.Effect>
@@ -53,7 +53,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="#2C3E50" CornerRadius="20,0,0,20">
+            <Border Grid.Column="0" Background="White" CornerRadius="20,0,0,20" Panel.ZIndex="1">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black"
+                          Direction="0"
+                          ShadowDepth="3"
+                          BlurRadius="15"
+                          Opacity="0.15"/>
+                </Border.Effect>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -62,22 +69,22 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Margin="0,40,0,30">
-                        <TextBlock Text="HRMS PRO" Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="HRMS PRO" Foreground="#1A3D64" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
                         <TextBlock Text="Management System" Foreground="#BDC3C7" FontSize="12" HorizontalAlignment="Center"/>
                     </StackPanel>
-
+    
                     <StackPanel Grid.Row="1">
-                        <Button x:Name="btnHome" Content="🏠  Trang Chủ" Style="{StaticResource MenuButtonStyle}" Click="btnHome_Click"/>
-                        <Button x:Name="btnManageEmp" Content="👥  Quản Lý Nhân Viên" Style="{StaticResource MenuButtonStyle}" Click="btnManageEmp_Click"/>
-                        <Button x:Name="btnDepartments" Content="🏢  Phòng Ban &amp; Vị Trí" Style="{StaticResource MenuButtonStyle}"/>
-                        <Button x:Name="btnPayrollAdmin" Content="💰  Tính Lương (Admin)" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnHome" Foreground ="#1A3D64"  Content="🏠  Trang Chủ" Style="{StaticResource MenuButtonStyle}" Click="btnHome_Click"/>
+                        <Button x:Name="btnManageEmp" Foreground ="#1A3D64" Content="👥  Quản Lý Nhân Viên" Style="{StaticResource MenuButtonStyle}" Click="btnManageEmp_Click"/>
+                        <Button x:Name="btnDepartments" Foreground ="#1A3D64" Content="🏢  Phòng Ban &amp; Vị Trí" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnPayrollAdmin" Foreground ="#1A3D64" Content="💰  Tính Lương (Admin)" Style="{StaticResource MenuButtonStyle}"/>
 
-                        <Button x:Name="btnProfile" Content="👤  Hồ Sơ Của Tôi" Style="{StaticResource MenuButtonStyle}"/>
-                        <Button x:Name="btnTimeSheet" Content="📅  Chấm Công" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnProfile" Foreground ="#1A3D64" Content="👤  Hồ Sơ Của Tôi" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnTimeSheet" Foreground ="#1A3D64" Content="📅  Chấm Công" Style="{StaticResource MenuButtonStyle}"/>
                     </StackPanel>
 
                     <Button x:Name="btnLogout" Grid.Row="2" Content="🚪  Đăng Xuất" 
-                            Background="#E74C3C" Foreground="White" Height="50" FontSize="16" BorderThickness="0"
+                            Background="#B43F3F" Foreground="White" Height="50" FontSize="16" BorderThickness="0"
                             Click="btnLogout_Click" Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -94,11 +101,11 @@
 
                 <Grid VerticalAlignment="Top" Height="50">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,15,0">
-                        <Button Content="—" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="14" Click="btnMinimize_Click"/>
-                        <Button Content="✕" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="16" FontWeight="Bold" Foreground="#E74C3C" Click="btnClose_Click"/>
+                        <Button Content="—" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="14" Click="btnMinimize_Click" Foreground="#FF1A3D64"/>
+                        <Button Content="✕" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="16" FontWeight="Bold" Foreground="#FFB43F3F" Click="btnClose_Click"/>
                     </StackPanel>
 
-                    <TextBlock x:Name="txtPageTitle" Text="Trang Chủ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0" FontSize="22" FontWeight="SemiBold" Foreground="#2C3E50"/>
+                    <TextBlock x:Name="txtPageTitle" Text="Trang Chủ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0" FontSize="22" FontWeight="SemiBold" Foreground="#1A3D64"/>
                 </Grid>
 
                 <ContentControl x:Name="MainContent" Margin="20,60,20,20"/>
