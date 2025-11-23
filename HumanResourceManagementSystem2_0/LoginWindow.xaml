@@ -21,10 +21,10 @@
                 <TextBlock Text="See your growth and get consulting support!" FontSize="14" Foreground="Gray" Margin="0, 0, 0, 25" TextWrapping="Wrap"/>
 
                 <TextBlock Text="User ID" Margin="0,0,0,5"/>
-                <TextBox x:Name="txtUserID" Text="@website.com" Padding="10" Height="40" BorderBrush="LightGray" Margin="0,0,0,15" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="txtUserID" Text="admin" Padding="10" Height="40" BorderBrush="LightGray" Margin="0,0,0,15" VerticalContentAlignment="Center"/>
 
                 <TextBlock Text="Password" Margin="0,0,0,5" />
-                <PasswordBox x:Name="txtPassword" Password="Password" Padding="10" Height="40" BorderBrush="LightGray" Margin="0,0,0,20" VerticalContentAlignment="Center"/>
+                <PasswordBox x:Name="txtPassword" Password="123" Padding="10" Height="40" BorderBrush="LightGray" Margin="0,0,0,20" VerticalContentAlignment="Center"/>
 
                 <Grid Margin="0,0,0,25">
                     <Grid.ColumnDefinitions>

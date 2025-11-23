@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HumanResourceManagementSystem2_0.Data; 
+using Microsoft.EntityFrameworkCore;
 
 namespace HumanResourceManagementSystem2_0
 {
@@ -79,29 +81,35 @@ namespace HumanResourceManagementSystem2_0
         // Nút Login
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUserID.Text;     // Lấy tên đăng nhập
-            string password = txtPassword.Password; // Lấy mật khẩu
+            string username = txtUserID.Text;
+            string password = txtPassword.Password;
 
-            // CASE 1: Đăng nhập ADMIN
-            if (username == "admin" && password == "123")
+            using (var context = new HrmsDbContext())
             {
-                // Mở MainDashboard với quyền "Admin"
-                MainDashboard main = new MainDashboard("Admin");
-                main.Show();
-                this.Close();
-            }
-            // CASE 2: Đăng nhập EMPLOYEE
-            else if (username == "employee" && password == "123")
-            {
-                // Mở MainDashboard với quyền "Employee"
-                MainDashboard main = new MainDashboard("Employee");
-                main.Show();
-                this.Close();
-            }
-            // CASE 3: Sai thông tin
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi Đăng Nhập", MessageBoxButton.OK, MessageBoxImage.Error);
+                // Tìm tài khoản trong CSDL
+                var user = context.Accounts
+                                  .Include(a => a.Role) // Kèm theo thông tin Quyền
+                                  .FirstOrDefault(u => u.UserName == username && u.PasswordHash == password);
+
+                if (user != null)
+                {
+                    if (user.IsActive == false)
+                    {
+                        MessageBox.Show("Tài khoản này đã bị khóa!");
+                        return;
+                    }
+
+                    // Đăng nhập thành công -> Mở MainDashboard theo Quyền
+                    string roleName = user.Role.RoleName; // "Admin" hoặc "Employee"
+
+                    MainDashboard main = new MainDashboard(roleName);
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+                }
             }
         }
 

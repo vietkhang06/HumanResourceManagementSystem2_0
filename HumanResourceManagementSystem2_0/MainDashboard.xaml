@@ -16,26 +16,33 @@
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="MenuButtonStyle">
+            <Setter Property="Foreground" Value="#1A3D64"/>
+
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Padding" Value="20,0,0,0"/>
             <Setter Property="Cursor" Value="Hand"/>
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="Center" 
+                                              Margin="{TemplateBinding Padding}"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#1A3D64"/>
+                    <Setter Property="Foreground" Value="White"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Trigger>
             </Style.Triggers>
@@ -55,11 +62,7 @@
 
             <Border Grid.Column="0" Background="White" CornerRadius="20,0,0,20" Panel.ZIndex="1">
                 <Border.Effect>
-                    <DropShadowEffect Color="Black"
-                          Direction="0"
-                          ShadowDepth="3"
-                          BlurRadius="15"
-                          Opacity="0.15"/>
+                    <DropShadowEffect Color="Black" Direction="0" ShadowDepth="3" BlurRadius="15" Opacity="0.15"/>
                 </Border.Effect>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -72,15 +75,15 @@
                         <TextBlock Text="HRMS PRO" Foreground="#1A3D64" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
                         <TextBlock Text="Management System" Foreground="#BDC3C7" FontSize="12" HorizontalAlignment="Center"/>
                     </StackPanel>
-    
-                    <StackPanel Grid.Row="1">
-                        <Button x:Name="btnHome" Foreground ="#1A3D64"  Content="🏠  Trang Chủ" Style="{StaticResource MenuButtonStyle}" Click="btnHome_Click"/>
-                        <Button x:Name="btnManageEmp" Foreground ="#1A3D64" Content="👥  Quản Lý Nhân Viên" Style="{StaticResource MenuButtonStyle}" Click="btnManageEmp_Click"/>
-                        <Button x:Name="btnDepartments" Foreground ="#1A3D64" Content="🏢  Phòng Ban &amp; Vị Trí" Style="{StaticResource MenuButtonStyle}"/>
-                        <Button x:Name="btnPayrollAdmin" Foreground ="#1A3D64" Content="💰  Tính Lương (Admin)" Style="{StaticResource MenuButtonStyle}"/>
 
-                        <Button x:Name="btnProfile" Foreground ="#1A3D64" Content="👤  Hồ Sơ Của Tôi" Style="{StaticResource MenuButtonStyle}"/>
-                        <Button x:Name="btnTimeSheet" Foreground ="#1A3D64" Content="📅  Chấm Công" Style="{StaticResource MenuButtonStyle}"/>
+                    <StackPanel Grid.Row="1">
+                        <Button x:Name="btnHome" Content="🏠  Trang Chủ" Style="{StaticResource MenuButtonStyle}" Click="btnHome_Click"/>
+                        <Button x:Name="btnManageEmp" Content="👥  Quản Lý Nhân Viên" Style="{StaticResource MenuButtonStyle}" Click="btnManageEmp_Click"/>
+                        <Button x:Name="btnDepartments" Content="🏢  Phòng Ban &amp; Vị Trí" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnPayrollAdmin" Content="💰  Tính Lương (Admin)" Style="{StaticResource MenuButtonStyle}"/>
+
+                        <Button x:Name="btnProfile" Content="👤  Hồ Sơ Của Tôi" Style="{StaticResource MenuButtonStyle}"/>
+                        <Button x:Name="btnTimeSheet" Content="📅  Chấm Công" Style="{StaticResource MenuButtonStyle}"/>
                     </StackPanel>
 
                     <Button x:Name="btnLogout" Grid.Row="2" Content="🚪  Đăng Xuất" 
@@ -98,11 +101,10 @@
             </Border>
 
             <Grid Grid.Column="1">
-
                 <Grid VerticalAlignment="Top" Height="50">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,15,0">
-                        <Button Content="—" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="14" Click="btnMinimize_Click" Foreground="#FF1A3D64"/>
-                        <Button Content="✕" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="16" FontWeight="Bold" Foreground="#FFB43F3F" Click="btnClose_Click"/>
+                        <Button Content="—" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="14" Click="btnMinimize_Click" Foreground="#1A3D64"/>
+                        <Button Content="✕" Width="30" Height="30" Background="Transparent" BorderThickness="0" FontSize="16" FontWeight="Bold" Foreground="#B43F3F" Click="btnClose_Click"/>
                     </StackPanel>
 
                     <TextBlock x:Name="txtPageTitle" Text="Trang Chủ" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0" FontSize="22" FontWeight="SemiBold" Foreground="#1A3D64"/>

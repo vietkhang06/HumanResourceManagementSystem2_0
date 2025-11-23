@@ -5,14 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="700" d:DesignWidth="1000"
-             Background="#F5F7FB" FontFamily="Segoe UI">
+             Background="#FFF9F8F6" FontFamily="Segoe UI">
 
     <UserControl.Resources>
         <Style x:Key="StatCardStyle" TargetType="Border">
             <Setter Property="Background" Value="White"/>
-            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="CornerRadius" Value="15"/>
             <Setter Property="Padding" Value="20"/>
-            <Setter Property="Margin" Value="0,0,20,0"/>
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="#E0E0E0" BlurRadius="20" ShadowDepth="5" Opacity="0.4"/>
@@ -25,169 +24,216 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Padding" Value="10"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Foreground" Value="#555"/>
+            <Setter Property="Foreground" Value="#7F8C8D"/>
+            <Setter Property="FontSize" Value="12"/>
         </Style>
+
         <Style TargetType="DataGridRow">
             <Setter Property="Background" Value="White"/>
-            <Setter Property="Height" Value="60"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="BorderBrush" Value="#F0F0F0"/>
+            <Setter Property="BorderBrush" Value="#F5F5F5"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="13"/>
         </Style>
     </UserControl.Resources>
 
     <Grid Margin="30">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Margin="0,0,0,30">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Style="{StaticResource StatCardStyle}">
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Total Employees" Foreground="#333" FontSize="14" FontWeight="SemiBold"/>
+                        <TextBlock Text="Total Employees" Foreground="#555" FontSize="14" FontWeight="SemiBold"/>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBlock Text="120" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="+5 New Employees" Foreground="#2ECC71" VerticalAlignment="Bottom" Margin="10,0,0,4" FontSize="12"/>
+                            <TextBlock Text="120" FontSize="32" FontWeight="Bold" Foreground="#2C3E50"/>
+                            <TextBlock Text="+5 New" Foreground="#2ECC71" VerticalAlignment="Bottom" Margin="10,0,0,6" FontSize="12" FontWeight="Bold"/>
                         </StackPanel>
-                        <Border Background="#F0F0F0" CornerRadius="5" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
+                        <Border Background="#F0F0F0" CornerRadius="6" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
                             <TextBlock Text="April 2025 ▼" FontSize="11" Foreground="Gray"/>
                         </Border>
                     </StackPanel>
-                    <Border Width="40" Height="40" CornerRadius="10" Background="#E0F7FA" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <TextBlock Text="👥" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#00BCD4" FontSize="18"/>
+                    <Border Width="45" Height="45" CornerRadius="12" Background="#E0F7FA" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <TextBlock Text="👥" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#00BCD4" FontSize="20"/>
                     </Border>
                 </Grid>
             </Border>
 
-            <Border Grid.Column="1" Style="{StaticResource StatCardStyle}">
+            <Border Grid.Column="2" Style="{StaticResource StatCardStyle}">
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Pending Requests" Foreground="#333" FontSize="14" FontWeight="SemiBold"/>
+                        <TextBlock Text="Pending Requests" Foreground="#555" FontSize="14" FontWeight="SemiBold"/>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBlock Text="04" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="+3 Request Populated" Foreground="#2ECC71" VerticalAlignment="Bottom" Margin="10,0,0,4" FontSize="12"/>
+                            <TextBlock Text="04" FontSize="32" FontWeight="Bold" Foreground="#2C3E50"/>
+                            <TextBlock Text="+3 New" Foreground="#2ECC71" VerticalAlignment="Bottom" Margin="10,0,0,6" FontSize="12" FontWeight="Bold"/>
                         </StackPanel>
-                        <Border Background="#F0F0F0" CornerRadius="5" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
+                        <Border Background="#F0F0F0" CornerRadius="6" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
                             <TextBlock Text="April 2025 ▼" FontSize="11" Foreground="Gray"/>
                         </Border>
                     </StackPanel>
-                    <Border Width="40" Height="40" CornerRadius="10" Background="#EDE7F6" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <TextBlock Text="📄" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#673AB7" FontSize="18"/>
+                    <Border Width="45" Height="45" CornerRadius="12" Background="#EDE7F6" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <TextBlock Text="📄" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#673AB7" FontSize="20"/>
                     </Border>
                 </Grid>
             </Border>
 
-            <Border Grid.Column="2" Style="{StaticResource StatCardStyle}" Margin="0">
+            <Border Grid.Column="4" Style="{StaticResource StatCardStyle}">
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Resigned Employees" Foreground="#333" FontSize="14" FontWeight="SemiBold"/>
+                        <TextBlock Text="Resigned" Foreground="#555" FontSize="14" FontWeight="SemiBold"/>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBlock Text="04" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="+1 New Resignations" Foreground="#E74C3C" VerticalAlignment="Bottom" Margin="10,0,0,4" FontSize="12"/>
+                            <TextBlock Text="04" FontSize="32" FontWeight="Bold" Foreground="#2C3E50"/>
+                            <TextBlock Text="+1 New" Foreground="#E74C3C" VerticalAlignment="Bottom" Margin="10,0,0,6" FontSize="12" FontWeight="Bold"/>
                         </StackPanel>
-                        <Border Background="#F0F0F0" CornerRadius="5" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
+                        <Border Background="#F0F0F0" CornerRadius="6" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
                             <TextBlock Text="April 2025 ▼" FontSize="11" Foreground="Gray"/>
                         </Border>
                     </StackPanel>
-                    <Border Width="40" Height="40" CornerRadius="10" Background="#FFEBEE" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <TextBlock Text="👤" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#E74C3C" FontSize="18"/>
+                    <Border Width="45" Height="45" CornerRadius="12" Background="#FFEBEE" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <TextBlock Text="👤" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#E74C3C" FontSize="20"/>
                     </Border>
                 </Grid>
             </Border>
         </Grid>
 
-        <Grid Grid.Row="1" Margin="0,0,0,20">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Margin="0,0,30,0">
-                    <TextBlock Text="Pending Requests (04)" FontSize="16" FontWeight="Bold" Foreground="#2ECC71"/>
-                    <Border Height="3" Background="#2ECC71" CornerRadius="1.5" Margin="0,5,0,0" Width="50" HorizontalAlignment="Left"/>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel Margin="0,0,30,0" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="TabPending_Click">
+                    <TextBlock x:Name="txtTabPending" Text="Pending Requests (04)" FontSize="16" FontWeight="Bold" Foreground="#2ECC71"/>
+                    <Border x:Name="bdrTabPending" Height="3" Background="#2ECC71" CornerRadius="1.5" Margin="0,5,0,0" HorizontalAlignment="Stretch"/>
                 </StackPanel>
-                <TextBlock Text="Approved Requests" FontSize="16" Foreground="Gray" Margin="0,0,30,0" VerticalAlignment="Center"/>
-                <TextBlock Text="Rejected Requests" FontSize="16" Foreground="Gray" VerticalAlignment="Center"/>
+
+                <StackPanel Margin="0,0,30,0" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="TabApproved_Click">
+                    <TextBlock x:Name="txtTabApproved" Text="Approved" FontSize="16" FontWeight="SemiBold" Foreground="#95A5A6"/>
+                    <Border x:Name="bdrTabApproved" Height="3" Background="#2ECC71" CornerRadius="1.5" Margin="0,5,0,0" HorizontalAlignment="Stretch" Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel Cursor="Hand" Background="Transparent" MouseLeftButtonDown="TabRejected_Click">
+                    <TextBlock x:Name="txtTabRejected" Text="Rejected" FontSize="16" FontWeight="SemiBold" Foreground="#95A5A6"/>
+                    <Border x:Name="bdrTabRejected" Height="3" Background="#2ECC71" CornerRadius="1.5" Margin="0,5,0,0" HorizontalAlignment="Stretch" Visibility="Collapsed"/>
+                </StackPanel>
             </StackPanel>
 
-            <Border HorizontalAlignment="Right" Width="250" Height="35" CornerRadius="17" Background="White" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Border HorizontalAlignment="Right" Width="280" Height="40" CornerRadius="20" Background="White" BorderBrush="#E0E0E0" BorderThickness="1">
                 <Grid>
-                    <TextBlock Text="🔍" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="Gray"/>
-                    <TextBox Text="Search employee..." Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Margin="35,0,10,0" Foreground="Gray"/>
+                    <TextBlock Text="🔍" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="#BDC3C7"/>
+                    <TextBox Text="Search employee..." Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Margin="40,0,15,0" Foreground="#7F8C8D"/>
                 </Grid>
             </Border>
         </Grid>
 
-        <Border Grid.Row="2" Background="White" CornerRadius="10" Padding="10">
+        <Border Grid.Row="4" Background="White" CornerRadius="15" Padding="5">
             <Border.Effect>
-                <DropShadowEffect Color="#E0E0E0" BlurRadius="15" ShadowDepth="2" Opacity="0.3"/>
+                <DropShadowEffect Color="#E0E0E0" BlurRadius="20" ShadowDepth="3" Opacity="0.3"/>
             </Border.Effect>
 
-            <DataGrid x:Name="dgRequests" AutoGenerateColumns="False" 
-                      CanUserAddRows="False" HeadersVisibility="Column" 
-                      GridLinesVisibility="None" Background="White" BorderThickness="0">
+            <DataGrid x:Name="dgRequests" 
+                      AutoGenerateColumns="False" 
+                      CanUserAddRows="False" 
+                      HeadersVisibility="Column" 
+                      GridLinesVisibility="None" 
+                      Background="White" 
+                      BorderThickness="0"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto">
 
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn Width="Auto">
                         <DataGridTemplateColumn.Header>
-                            <CheckBox/>
+                            <CheckBox Margin="10,0,0,0"/>
                         </DataGridTemplateColumn.Header>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="Emp ID" Binding="{Binding EmployeeID}" Width="80" FontWeight="Bold" Foreground="Gray"/>
+                    <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}" Width="70" FontWeight="SemiBold" Foreground="#7F8C8D">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Margin" Value="10,0,0,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
 
-                    <DataGridTemplateColumn Header="Employee Name" Width="200">
+                    <DataGridTemplateColumn Header="Employee Name" Width="2*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Border Width="35" Height="35" CornerRadius="17.5" Background="#DDD" Margin="0,0,10,0">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Border Width="32" Height="32" CornerRadius="16" Background="#F0F0F0" Margin="0,0,10,0">
                                         <Image Source="{Binding AvatarPath}" Stretch="UniformToFill">
                                             <Image.Clip>
-                                                <EllipseGeometry Center="17.5,17.5" RadiusX="17.5" RadiusY="17.5"/>
+                                                <EllipseGeometry Center="16,16" RadiusX="16" RadiusY="16"/>
                                             </Image.Clip>
                                         </Image>
                                     </Border>
                                     <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                                        <TextBlock Text="{Binding Position}" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="13" Foreground="#2C3E50"/>
+                                        <TextBlock Text="{Binding Position}" FontSize="11" Foreground="#95A5A6"/>
                                     </StackPanel>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="Department" Binding="{Binding Department}" Width="120" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Department" Binding="{Binding Department}" Width="*" Foreground="#7F8C8D">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
 
                     <DataGridTemplateColumn Header="Leave Type" Width="140">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Border Background="{Binding LeaveColorBg}" CornerRadius="12" Padding="10,4" HorizontalAlignment="Left">
-                                    <TextBlock Text="{Binding LeaveType}" Foreground="{Binding LeaveColorFg}" FontSize="11" FontWeight="SemiBold"/>
+                                <Border Background="{Binding LeaveColorBg}" CornerRadius="6" Padding="8,4" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding LeaveType}" Foreground="{Binding LeaveColorFg}" FontSize="11" FontWeight="Bold"/>
                                 </Border>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Width="100" Foreground="Gray"/>
-                    <DataGridTextColumn Header="Date Applied" Binding="{Binding DateApplied}" Width="120" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Width="90" Foreground="#7F8C8D">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
 
-                    <DataGridTemplateColumn Header="Action" Width="*">
+                    <DataGridTextColumn Header="Applied On" Binding="{Binding DateApplied}" Width="110" Foreground="#7F8C8D">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn Header="Action" Width="Auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="View More" Foreground="#2ECC71" FontWeight="Bold" TextDecorations="Underline" Cursor="Hand" VerticalAlignment="Center"/>
-                                    <Button Content="⋮" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" FontSize="16" Margin="10,0,0,0"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                                    <TextBlock Text="View" Foreground="#2ECC71" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="12"/>
+                                    <Button Content="⋮" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" Cursor="Hand"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -196,19 +242,23 @@
             </DataGrid>
         </Border>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-            <Button Content="Reject" Width="100" Height="40" Background="White" BorderBrush="#E74C3C" BorderThickness="1" Foreground="#E74C3C" FontWeight="Bold" Margin="0,0,15,0">
+        <StackPanel x:Name="pnlActionButtons" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Reject Request" Width="140" Height="40" 
+                    Background="White" BorderBrush="#E74C3C" BorderThickness="1.5" 
+                    Foreground="#E74C3C" FontWeight="Bold" FontSize="13" Margin="0,0,15,0" Cursor="Hand">
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </Button.Resources>
             </Button>
 
-            <Button Content="Approve" Width="100" Height="40" Background="#2ECC71" BorderThickness="0" Foreground="White" FontWeight="Bold">
+            <Button Content="Approve Request" Width="150" Height="40" 
+                    Background="#2ECC71" BorderThickness="0" 
+                    Foreground="White" FontWeight="Bold" FontSize="13" Cursor="Hand">
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
+                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </Button.Resources>
             </Button>
