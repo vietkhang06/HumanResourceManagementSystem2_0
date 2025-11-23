@@ -65,9 +65,6 @@
                             <TextBlock Text="120" FontSize="32" FontWeight="Bold" Foreground="#2C3E50"/>
                             <TextBlock Text="+5 New" Foreground="#2ECC71" VerticalAlignment="Bottom" Margin="10,0,0,6" FontSize="12" FontWeight="Bold"/>
                         </StackPanel>
-                        <Border Background="#F0F0F0" CornerRadius="6" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
-                            <TextBlock Text="April 2025 ▼" FontSize="11" Foreground="Gray"/>
-                        </Border>
                     </StackPanel>
                     <Border Width="45" Height="45" CornerRadius="12" Background="#E0F7FA" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <TextBlock Text="👥" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#00BCD4" FontSize="20"/>
@@ -83,9 +80,6 @@
                             <TextBlock Text="04" FontSize="32" FontWeight="Bold" Foreground="#2C3E50"/>
                             <TextBlock Text="+3 New" Foreground="#2ECC71" VerticalAlignment="Bottom" Margin="10,0,0,6" FontSize="12" FontWeight="Bold"/>
                         </StackPanel>
-                        <Border Background="#F0F0F0" CornerRadius="6" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
-                            <TextBlock Text="April 2025 ▼" FontSize="11" Foreground="Gray"/>
-                        </Border>
                     </StackPanel>
                     <Border Width="45" Height="45" CornerRadius="12" Background="#EDE7F6" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <TextBlock Text="📄" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#673AB7" FontSize="20"/>
@@ -101,9 +95,6 @@
                             <TextBlock Text="04" FontSize="32" FontWeight="Bold" Foreground="#2C3E50"/>
                             <TextBlock Text="+1 New" Foreground="#E74C3C" VerticalAlignment="Bottom" Margin="10,0,0,6" FontSize="12" FontWeight="Bold"/>
                         </StackPanel>
-                        <Border Background="#F0F0F0" CornerRadius="6" HorizontalAlignment="Left" Padding="8,4" Margin="0,15,0,0">
-                            <TextBlock Text="April 2025 ▼" FontSize="11" Foreground="Gray"/>
-                        </Border>
                     </StackPanel>
                     <Border Width="45" Height="45" CornerRadius="12" Background="#FFEBEE" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <TextBlock Text="👤" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#E74C3C" FontSize="20"/>

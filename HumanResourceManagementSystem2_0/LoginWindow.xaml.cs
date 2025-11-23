@@ -219,5 +219,12 @@ namespace HumanResourceManagementSystem2_0
         {
             this.Close();
         }
+
+        private void ForgotPassword_Click(object sender, RoutedEventArgs e)
+        {
+            ForgotPasswordWindow forgotPasswordWindow = new ForgotPasswordWindow();
+            forgotPasswordWindow.Show();
+            this.Close();
+        }
     }
 }
